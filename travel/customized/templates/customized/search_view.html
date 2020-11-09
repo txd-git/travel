@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=A1FWWa3iyQmOrjlQ7gjwBzlP2b84Xe2g"></script>
+    <title>景点推荐</title>
+    <!-- 引入外部css文件 -->
+    <link rel="stylesheet" href="/static/css/customized.css">
+    <!-- 引入外部js文件 -->
+    <script src="/static/js/jquery.min.js"></script>
+    <!-- 自定js文件 -->
+    <script src="/static/js/index.js"></script>
+</head>
+<body>
+    <header>
+        <nav>
+            <div id="allmap"></div>
+            <!-- logo -->
+            <h1 class="logo">
+                <a id="current_address">景点推荐</a>
+            </h1>
+            <ul>
+                <li>
+                    <div id="current_address"></div>
+                </li>
+
+                <li>
+                    <button id="btn" onclick="get_views()" style="margin-top:26px;color:black">搜&nbsp&nbsp&nbsp&nbsp索</button>
+                    <input type="text" id="text" value="" placeholder="我想去...">
+                    <span id="auto_div"></span>
+
+                </li>
+{#                <li>#}
+{#                    <a id="payorder" href="/payment/payorder_info">查询订单信息</a>#}
+{#                </li>#}
+            </ul>
+        </nav>
+    </header>
+    <main>
+
+        <div class="viewsbox">
+            <!-- 使用js加载所有的景点信息  -->
+
+        </div>
+    </main>
+
+
+</body>
+
+<script>
+    $(function () {
+        var url = document.location.toString();
+        alert(url);
+        var address = url.split("/")[6];
+
+        get_search_views(address)
+    })
+</script>
+
+<script>
+    //当用户输入时匹配到相应的景点
+    function get_search_views(address) {
+
+        if (address==''){
+            alert('您输入的城市有误！')
+        }
+        $.ajax({
+                url: "/v1/customized/view/" + address,
+                type: "GET",
+                success: function (res) {
+                    //alert('俺进来啦');
+                    //alert(res['data']['shi']);
+                    if(res['code']==200){
+
+                        //alert(res['address']);
+                        var address="来"+res['address']+'的人都去了哪里？';
+                        $('#current_address').html(address);
+                        add_views(res['data']);
+                        {#alert(es['data'])#}
+                    }else{
+                        alert(res['error'])
+                    }
+                    }
+                });
+        add_views(address);
+    }
+
+    //依据定位或输入的城市，对主页的景点发生变化
+    function add_views(res) {
+            {#alert('连接成功');#}
+            //alert(res['shi'],'获取景点');
+            $.ajax({
+                url:'/v1/customized/views/'+res['shi']+'&'+res['qu'],
+                type: 'GET',
+                success:function (res) {
+                    alert('相应景点成功');
+                    var html='';
+                    $('.viewsbox').html('');
+                    $.each(res['data'],function (i,view) {
+                        {#alert(view['view_name']);#}
+                        {#alert(view['city_name']);#}
+                        $('#current_address').val("来"+view['view_address']+'的人都去了哪里？');
+                            var views=`
+                                    <div class="views">
+                                        <h3 class="viewtitle">
+                                            <a href="#">
+                                                ${view['view_name']}
+                                            </a>
+                                        </h3>
+                                        <div class="viewpic">
+                                            <a href="#">
+                                                <img src="${view['view_img']}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="view_des">
+                                           <p class="viewtext">
+                                           景点描述
+                                           </p>
+                                            <br>
+                                           <p class="view_ele">
+                                            <span class="view_score">
+                                                  评分:${view['view_score']}
+                                            </span>
+                                            <span class="view_price">
+                                                  人均：${view['view_price']}
+                                            </span>
+                                            </p>
+                                            <br>
+                                            <p class="view_ele">
+                                            <span id='address_map'>
+                                                  地址：${view['view_address']}
+                                            </span>
+                                            </p>
+                                            <br>
+                                            <p class="view_ele">
+                                            <span class="author">
+                                                日期:<input type="date" id="${view['view_id']}">
+                                                <button type='submit' id="Btn_pay" onclick="buy_ticket(${view['view_id']},${view['view_price']})">买票</button>
+                                            </span>
+                                            </p>
+
+                                        </div>
+
+                                        <div class="view_tiqi">
+                                           <p class="viewtext">
+                                           天气预报
+                                            </p>
+                                            <br>
+                                            <p class="view_ele">
+                                             <span>${view['view_tq']['date']}</span>
+                                             <span>${view['view_tq']['weather']}</span>
+                                             <span>${view['view_tq']['templerature']}</span>
+                                             <span>${view['view_tq']['win']}</span>
+
+                                            </p>
+                                       </div>
+
+                                    </div>
+                                    `;
+
+
+            $('.viewsbox').append(views)
+        })//each结束
+        //$('.viewsbox').append(html)
+
+                }
+            })
+
+
+    }
+</script>
+
+
+<script>
+    //当用户输入时匹配到相应的景点
+    function get_views() {
+        var input_address=$('#text').val();
+        if (input_address==''){
+            alert('您输入的城市有误！')
+        }
+        $.ajax({
+                url: "/v1/customized/view/" + input_address,
+                type: "GET",
+                success: function (res) {
+                    //alert('俺进来啦');
+                    //alert(res['data']['shi']);
+                    if(res['code']==200){
+
+                        //alert(res['address']);
+                        var address="来"+res['address']+'的人都去了哪里？';
+                        $('#current_address').html(address);
+                        add_views(res['data']);
+                        {#alert(es['data'])#}
+                    }else{
+                        alert(res['error'])
+                    }
+                    }
+                });
+        add_views(input_address);
+    }
+
+    //依据定位或输入的城市，对主页的景点发生变化
+    function add_views(res) {
+            {#alert('连接成功');#}
+            //alert(res['shi'],'获取景点');
+            $.ajax({
+                url:'/v1/customized/views/'+res['shi']+'&'+res['qu'],
+                type: 'GET',
+                success:function (res) {
+                    alert('相应景点成功');
+                    var html='';
+                    $('.viewsbox').html('');
+                    $.each(res['data'],function (i,view) {
+                        {#alert(view['view_name']);#}
+                        {#alert(view['city_name']);#}
+                        $('#current_address').val("来"+view['view_address']+'的人都去了哪里？');
+                            var views=`
+                                    <div class="views">
+                                        <h3 class="viewtitle">
+                                            <a href="#">
+                                                ${view['view_name']}
+                                            </a>
+                                        </h3>
+                                        <div class="viewpic">
+                                            <a href="#">
+                                                <img src="${view['view_img']}" alt="">
+                                            </a>
+                                        </div>
+                                        <div class="view_des">
+                                           <p class="viewtext">
+                                           景点描述
+                                           </p>
+                                            <br>
+                                           <p class="view_ele">
+                                            <span class="view_score">
+                                                  评分:${view['view_score']}
+                                            </span>
+                                            <span class="view_price">
+                                                  人均：${view['view_price']}
+                                            </span>
+                                            </p>
+                                            <br>
+                                            <p class="view_ele">
+                                            <span id='address_map'>
+                                                  地址：${view['view_address']}
+                                            </span>
+                                            </p>
+                                            <br>
+                                            <p class="view_ele">
+                                            <span class="author">
+                                                日期:<input type="date" id="${view['view_id']}">
+                                                <button type='submit' id="Btn_pay" onclick="buy_ticket(${view['view_id']},${view['view_price']})">买票</button>
+                                            </span>
+                                            </p>
+
+                                        </div>
+
+                                        <div class="view_tiqi">
+                                           <p class="viewtext">
+                                           天气预报
+                                            </p>
+                                            <br>
+                                            <p class="view_ele">
+                                             <span>${view['view_tq']['date']}</span>
+                                             <span>${view['view_tq']['weather']}</span>
+                                             <span>${view['view_tq']['templerature']}</span>
+                                             <span>${view['view_tq']['win']}</span>
+
+                                            </p>
+                                       </div>
+
+                                    </div>
+                                    `;
+
+
+            $('.viewsbox').append(views)
+        })//each结束
+        //$('.viewsbox').append(html)
+
+                }
+            })
+
+
+    }
+</script>
+
+{#买票#}
+<script>
+    function buy_ticket(view_id,view_price) {
+        alert('买票啦');
+        //订单编号：时间戳+景点编号
+        var token = window.localStorage.getItem('dnblog_token');
+
+
+        if(token==null){
+            window.location.href='/user/login'
+        }
+        //var username = window.localStorage.getItem('dnblog_user');
+        var spend_time=$('#'+view_id).val();
+        {#alert(spend_time);#}
+        var order_id = spend_time+view_id;
+        {#alert(order_id);#}
+	    post_data = {"order_id": order_id,'price':view_price};
+        console.log(post_data);
+        $.ajax({
+            url:"/payment/jump/",
+            type:"post",
+            contentType: "application/json",
+            dataType:"json",
+            data: JSON.stringify(post_data),
+            beforeSend: function(request) {
+            request.setRequestHeader("Authorization", token);
+            },
+            success:function (data) {
+                if(data.code==403){
+                    window.location.href='/user/login'
+                }
+                window.location = data.pay_url
+            },
+            error:function(errors){
+                console.log("错误");
+                console.log(errors)
+            }
+            })
+
+
+
+    }
+
+</script>
+
+
+{#<script>#}
+{#     $('#payorder').click(function () {#}
+{#         alert('2222');#}
+{#        $.ajax({#}
+{#            type:"get",#}
+{#         // url#}
+{#         url:"http://127.0.0.1:8000/payment/payorder_info",#}
+{#         beforeSend: function(request) {#}
+{#               request.setRequestHeader("Authorization", token);#}
+{#         },#}
+{##}
+{#        })#}
+{#    })#}
+{#</script>#}
+
+
+
+</html>

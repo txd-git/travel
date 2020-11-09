@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>酒店查询</title>
+    <script src="/static/js/jquery.min.js"></script>
+    <script src="/static/js/zhifubao.js"></script>
+    <link rel="stylesheet" href="/static/css/animate.css">
+    <link rel="stylesheet" href="/static/css/owl.carousel.min.css">
+    <link rel="stylesheet" href="/static/css/style.css">
+  </head>
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="/travel">千&nbsp里&nbsp之&nbsp行&nbsp&nbsp始&nbsp于&nbsp足&nbsp下</a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> 菜单
+	      </button>
+
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="/travel" class="nav-link">网站主页</a></li>
+	          <li class="nav-item"><a href="/v1/customized/view" class="nav-link">景点推荐</a></li>
+	          <li class="nav-item"><a href="/hotel/query" class="nav-link">酒店订购</a></li>
+	          <li class="nav-item"><a href="/article/artlist" class="nav-link">行程分享</a></li>
+                				<li class="nav-item"><a href="/tq/query" target="_blank" class="nav-link">天气查询</a></li>
+<!--	          <li class="nav-item active"><a href="/contact" class="nav-link">关于我们</a></li>-->
+                <div id="at">
+                    <div class="nav-item">个人中心</div>
+                    <div class="ct" >
+                    <div class="nav-item"><a href="/user/login" class="nav-link">登录</a></div>
+                    <div class="nav-item"><a href="/user/register" class="nav-link">注册</a></div>
+                    <div class="nav-item"><a  id="a" href="#" target="_blank" class="nav-link">修改个人信息</a></div>
+                    </div>
+               </div>
+	        </ul>
+	      </div>
+	    </div>
+	  </nav>
+    <!-- END nav -->
+
+    <div class="hero-wrap" style="background-image: url('/static/images/60.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+          <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center">
+          	<div class="text">
+	            <p class="breadcrumbs mb-2"><span class="mr-2"><a href="/travel">谢谢使用！</a></span></p>
+	            <h1 class="mb-4 bread">酒店 订购</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+{#    <script src="/static/js/jquery.min.js"></script>#}
+  <script src="/static/js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="/static/js/jquery.waypoints.min.js"></script>
+  <script src="/static/js/jquery.stellar.min.js"></script>
+  <script src="/static/js/owl.carousel.min.js"></script>
+  <script src="/static/js/jquery.magnific-popup.min.js"></script>
+  <script src="/static/js/aos.js"></script>
+  <script src="/static/js/bootstrap-datepicker.js"></script>
+  <script src="/static/js/scrollax.min.js"></script>
+  <script src="/static/js/main.js"></script>
+
+
+<a style="padding-top: 20px;padding-left:20px">
+<div class="hotel-list-wrap">
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic"
+                     data-src="https://m.tuniucdn.com/fb3/s1/2n9c/x3eDaYeq4oKqV9i2TVfdxjDGSvz_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb3/s1/2n9c/x3eDaYeq4oKqV9i2TVfdxjDGSvz_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loaded">
+                <div class="feature" style="padding-right:20px"><b style="size:30px">#浪漫情侣</b>
+                </div>
+            </div>
+            <div style="padding-left:400px;margin-top:-230px">
+            <div class="info">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">梦幻西西里精品主题客栈(西安钟楼回民街)</span>
+                </div>
+                <div class="hotel-comment">
+                    <span class="hotel-score-word f-s" style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">2332人觉得很赞</span>
+                </div>
+                <div class="business">
+                    <span>钟鼓楼/回民街</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线1.6公里</span>
+                    </div>
+                </div>
+            </div>
+            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price1">147</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price1')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <!---->
+                    <div class="detail-btn f-s"
+                    style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb3/s1/2n9c/opnYNAKbZBhCu5m1EEhTjWkZg7J_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb3/s1/2n9c/opnYNAKbZBhCu5m1EEhTjWkZg7J_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loaded">
+                <div class="feature">
+                    <span style="padding-right:20px"><b style="size:30px">#防疫安心服务</b></span>
+                </div>
+            </div>
+            <div style="padding-left:400px;margin-top:-230px">
+            <div class="info">
+                <div class="hotel-title" >
+                    <span class="hotel-name f-m" >宜必思尚品酒店(西安钟鼓楼回民街店)</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s" style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">808人觉得很赞</span>
+                </div>
+                <div class="business">
+                    <span>钟鼓楼/回民街</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div dclass="hotel-distance">
+                        <span>距市中心直线1.2公里</span>
+                    </div>
+                </div>
+                            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price2">362</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price2')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <!---->
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+            </div>
+        </div>
+         </div>
+    </div>
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb3/s1/2n9c/3pu57tYWMYRgUdFnZbL4SdyqPbbz_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb3/s1/2n9c/3pu57tYWMYRgUdFnZbL4SdyqPbbz_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loaded">
+                <div class="feature"></div>
+            </div>
+            <div class="info">
+                <span style="padding-right:20px"><b style="size:30px">#商务型</b></span>
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">如家酒店(西安钟鼓楼回民街店)</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s"
+                          style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">885人觉得很赞</span>
+                    <div class="business"><span>钟鼓楼/回民街</span></div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线1.9公里</span>
+                    </div>
+                </div>
+            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price3">168</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price3')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                </div></div>
+            </div>
+        </div>
+{#    </div>#}
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D7/Cii-TF3ZgMWIO1zXAAH-P5bFBIgAAFqHwJAYdYAAf5X818_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D7/Cii-TF3ZgMWIO1zXAAH-P5bFBIgAAFqHwJAYdYAAf5X818_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loaded">
+                <div class="feature">
+                    <span><b style="size:30px">#休闲度假</b></span>
+                </div>
+            </div>
+            <div class="info">
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">维也纳国际酒店(西安大雁塔店)</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s" style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">5967人觉得很赞</span>
+                                    <div class="business">
+                    <span>大雁塔/曲江度假区</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线4.8公里</span>
+                    </div>
+                </div>
+            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price4">315</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price4')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                 </div></div>
+            </div>
+        </div>
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb2/t1/G6/M00/1B/60/Cii-U13MF_iIXq7GAARdmz4CG-0AADBXgPxhmoABF2z358_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb2/t1/G6/M00/1B/60/Cii-U13MF_iIXq7GAARdmz4CG-0AADBXgPxhmoABF2z358_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loaded">
+                <div class="feature">
+                    <span><b style="size:100px">#浪漫情侣</b></span>
+                </div>
+            </div>
+            <div class="info">
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">西安钟楼森德酒店</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s"
+                          style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">1182人觉得很赞</span>
+                                    <div class="business">
+                    <span>钟鼓楼/回民街</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线974米</span>
+                    </div>
+                </div>
+            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price5">311</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price5')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                </div></div>
+            </div>
+        </div>
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D8/Cii-TF3ZgNiIDs7OAARegHULIakAAFqJADRnIAABF6Y860_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D8/Cii-TF3ZgNiIDs7OAARegHULIakAAFqJADRnIAABF6Y860_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loaded">
+                <div class="feature">
+                    <span><b>#防疫安心服务</b></span>
+                </div>
+            </div>
+            <div class="info">
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">全季酒店(西安五路口地铁站店)</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s"
+                          style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">1458人觉得很赞</span>
+                                    <div class="business">
+                    <span>钟鼓楼/回民街</span>
+                </div>
+                <div d class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线543米</span>
+                    </div>
+                </div>
+            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price6">264</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price6')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom"><!---->
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                </div></div>
+            </div>
+        </div>
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/DC/Cii-TF3ZhmiIH0fLAAFUjK11VJUAAFqTwOItsYAAVSk364_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/DC/Cii-TF3ZhmiIH0fLAAFUjK11VJUAAFqTwOItsYAAVSk364_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loading">
+                <div class="feature">
+                    <span><b>#浪漫情侣</b></span>
+                </div>
+            </div>
+            <div class="info">
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">麗枫酒店(西安钟楼店)</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s"
+                          style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">1897人觉得很赞</span>
+                                    <div class="business">
+                    <span>钟鼓楼/回民街</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线1.1公里</span>
+                    </div>
+                </div>
+                                <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price7">239</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price7')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                </div></div>
+            </div>
+        </div>
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D8/Cii-U13ZgRWIVGoOAATtCNxxHisAAFqKAIuEhIABO0g368_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D8/Cii-U13ZgRWIVGoOAATtCNxxHisAAFqKAIuEhIABO0g368_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loading">
+                <div class="feature">
+                    <span><b>#休闲度假</b></span></div>
+            </div>
+            <div class="info">
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">西安盛美利亚酒店</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s"
+                          style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">4205人觉得很赞</span>
+                                    <div class="business">
+                    <span>大雁塔/曲江度假区</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线6.8公里</span>
+                    </div>
+                </div>
+            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price8">900</span>
+                        <span class="qi">起</span></div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price8')" style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                </div></div>
+            </div>
+        </div>
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:100px"
+                     data-src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D8/Cii-TF3ZgNiIDwOoAATkZ2LCn-sAAFqJABMvN8ABOR_327_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb2/t1/G6/M00/45/D8/Cii-TF3ZgNiIDwOoAATkZ2LCn-sAAFqJABMvN8ABOR_327_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loading">
+                <div class="feature">
+                    <span><b>#商务型</b></span>
+                </div>
+            </div>
+            <div class="info">
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">西安曲江国际饭店</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s" style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span class="comment-amount f-r">5324人觉得很赞</span>
+                                    <div class="business">
+                    <span>大雁塔/曲江度假区</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线5.2公里</span>
+                    </div>
+                </div>
+            <div class="price-wrap">
+                <div da class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price9">550</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price9')"
+                          style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                </div></div>
+            </div>
+        </div>
+
+    <div class="hotel-item">
+        <div class="hotel-item-inner">
+            <div class="pic">
+                <img class="hotel-pic" style="padding-top:90px"
+                     data-src="https://m.tuniucdn.com/fb3/s1/2n9c/2d5YRfhA4UnVCinDvjmUWWKh2wQZ_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     src="https://m.tuniucdn.com/fb3/s1/2n9c/2d5YRfhA4UnVCinDvjmUWWKh2wQZ_w200_h200_c1_t0_w360_h200_c1_t0.jpg"
+                     lazy="loading">
+                <div class="feature">
+                    <span style="padding-bottom:120px"><b>#防疫安心服务</b></span>
+                </div>
+            </div>
+            <div class="info">
+                <div style="padding-left:400px;margin-top:-230px">
+                <div class="hotel-title">
+                    <span class="hotel-name f-m">汉庭酒店(西安钟鼓楼广场店)</span>
+                </div>
+                <div class="hotel-comment">
+                    </div>
+                    <span class="hotel-score-word f-s"
+                          style="color: rgb(255, 119, 51);">超棒！</span>
+                    <span lass="comment-amount f-r">5073人觉得很赞</span>
+                                    <div class="business">
+                    <span>钟鼓楼/回民街</span>
+                </div>
+                <div class="bottom-wrap">
+                    <div class="hotel-distance">
+                        <span>距市中心直线1.5公里</span>
+                    </div>
+                </div>
+            <div class="price-wrap">
+                <div class="hotel-price">
+                    <div class="">
+                        <span class="cny">¥</span>
+                        <span id="price10">185</span>
+                        <span class="qi">起</span>
+                    </div>
+                </div>
+                <div class="hotel-tag">
+                    <span class="zhifubao" onclick="rand(1000,9999,'#price10')"
+                          style="color: rgb(72, 165, 247); border-color: rgb(72, 165, 247);">点击进入 限时促</span>
+                </div>
+                <div class="detail-bottom">
+                    <div class="detail-btn f-s" style="background: rgb(255, 119, 51);">&nbsp</div>
+                </div>
+            </div>
+                </div></div>
+            </div>
+        </div>
+
+{#<div class="pricea">77</div>#}
+{#<button class="zhifubao" onclick="rand(1000,9999,'#pricea')">支付</button>#}
+<script>
+    //模拟数据 向后端传订单id
+
+    var post_data = {};
+    function rand(min, max,a) {
+        var price = $(a).text();
+        alert("确认支付"+price+"元");//有没有确定和取消的提示，alert只有确定
+        random_id = Math.floor(Math.random() * (max - min)) + min;
+        order_id = "2019111821315602" + random_id.toString();
+        post_data = {"order_id": order_id, "price": price};
+        console.log(post_data);
+        return post_data;
+    }
+
+    $(".zhifubao").click(function () {
+        zhifubao()
+    })
+
+</script>
+</body>
+</html>

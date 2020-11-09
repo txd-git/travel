@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link href="/static/css/styletq.css" rel="stylesheet" type="text/css" media="all"/>
+    <link href="/static/css/owl.carouseltq.css" rel="stylesheet" type="text/css" media="all">
+    <title>天气预报</title>
+    <script type="text/javascript"
+            src="http://api.map.baidu.com/api?v=2.0&ak=A1FWWa3iyQmOrjlQ7gjwBzlP2b84Xe2g"></script>
+    <script src="/static/js/jquerytq.min.js"></script>
+    <script src="/static/js/auto.js"></script>
+    <style>
+        .text {
+            left: 0;
+            position: relative;
+        }
+
+        #show{
+            size: 100px;
+            width: 200px;
+            height: 300px;
+        }
+
+        #auto_div {
+            display: none;
+            width: 300px;
+            border: 1px #74c0f9 solid;
+            size: 30px;
+            background: #FFF;
+            position: absolute;
+            top: 300px;
+            left: 0;
+            color: #323232;
+        }
+    </style>
+</head>
+<body>
+<div id="allmap"></div>
+<!--<input type="text" id="text" value="">-->
+<!--<div id="auto_div"></div>-->
+    <h1>天气预报</h1>
+    <div class="main-wthree-row">
+        <div class="agileits-top">
+            <div class="agileinfo-top-row">
+                <div class="agileinfo-top-img">
+                    <span></span>
+                </div>
+                <h3 id="tem" style="color: white"><sup></sup><span style="color:orange">感谢使用!</span></h3>
+                <a href="/travel">返回首页</a>
+                    <div class="date-time">
+                        <div class="dmy">
+                            <div id="txt">请输入城市</div>
+                            <input type="text" id="text" value="">
+<!--<span id="tem" style="color: green">感谢使用!</span>-->
+
+                            <div class="date">
+									<!-- Date-JavaScript -->
+									<script type="text/javascript">
+									var mydate=new Date()
+									var year=mydate.getYear()
+									// if(year<1000)
+									year+=1900
+									var day=mydate.getDay()
+									var month=mydate.getMonth()
+									var daym=mydate.getDate()
+									if(daym<10)
+									daym="0"+daym
+									var dayarray=new Array("Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday")
+									var montharray=new Array("January","February","March","April","May","June","July","August","September","October","November","December")
+									document.write(""+dayarray[day]+", "+montharray[month]+" "+daym+", "+year+"")
+									</script>
+									<!-- //Date-JavaScript -->
+                            </div>
+                            <div class="clear"></div>
+                           <table>
+                               <thead>
+                               <tr>
+                                   <th><h1 style="color: #0a0d16">日期</h1></th>
+                                   <th><h1 style="color: #0a0d16">天气</h1></th>
+                                   <th><h1 style="color: #0a0d16">温度</h1></th>
+                                   <th><h1 style="color: #0a0d16">风力</h1></th>
+                               </tr>
+                               </thead>
+                               <tbody id="show">
+                               </tbody>
+                           </table>
+                            <div id="auto_div"></div>
+                        </div>
+                        <div class="clear"></div>
+                    </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="copyright">
+</div>
+
+
+
+
+<script type="text/javascript">
+    // 百度地图API功能
+    var map = new BMap.Map("allmap");
+    var point = new BMap.Point(108.95, 34.27);
+    map.centerAndZoom(point, 12);
+    var geolocation = new BMap.Geolocation();
+    geolocation.getCurrentPosition(function (r) {
+        console.log(r.point);
+        if (this.getStatus() == BMAP_STATUS_SUCCESS) {
+            var mk = new BMap.Marker(r.point);
+            map.addOverlay(mk);//标出所在地
+            map.panTo(r.point);//地图中心移动
+            var point = new BMap.Point(r.point.lng, r.point.lat);//用所定位的经纬度查找所在地省市街道等信息
+            var gc = new BMap.Geocoder();
+            gc.getLocation(point, function (rs) {
+                var addComp = rs.addressComponents;
+                console.log(rs.address);//地址信息
+                $.ajax({
+                    url: "/tq/get_addree/" + rs.address,
+                    type: "GET",
+                    success: function (res) {
+                        $('#text').val(res);
+                        $.ajax({
+                            url: "/tq/get_weather/" + res,
+                            type: 'GET',
+                            success: function (res) {
+                                $("#tem").html(res[0].templerature);
+                                var html = "";
+                                $.each(res, function (i, obj) {
+                                    html += "<tr>";
+                                    html += "<td>" + obj.date + "</td>";
+                                    html += "<td>" + obj.weather + "</td>";
+                                    html += "<td>" + obj.templerature + "</td>";
+                                    html += "<td>" + obj.win + "</td>";
+                                    html += "</tr>";
+                                });
+                                $("#show").html(html);
+                            }
+                        })
+                    }
+                })
+            });
+        } else {
+            alert('failed' + this.getStatus());
+        }
+    }, {enableHighAccuracy: true})
+</script>
+<script>
+    // $("#text").change(function () {tq()});
+    $("#auto_div").click(function(){tq()});
+</script>
+<script>
+    var test_list=[];
+       $(window).load(function () {
+        $.ajax({
+            url: "/tq/get_name" ,
+            type: 'GET',
+             success: function (res){
+                test_list=res["name"]
+             }
+        })
+    });
+
+    var old_value = "";
+    var highlightindex = -1;
+    $(function () {
+        old_value = $("#text").val();
+        $("#text").focus(function () {
+            if ($("#text").val() == "") {
+                AutoComplete("auto_div", "text", test_list);
+            }
+        });
+        $("#text").keyup(function () {
+            AutoComplete("auto_div", "text", test_list);
+        });
+    })
+</script>
+</body>
+</html>

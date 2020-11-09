@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>编辑内容</title>
+    <script src="/static/js/jquery-2.2.4.min.js"></script>
+    <script src="/static/js/wangEditor.js"></script>
+    <script src="/static/js/xcConfirm.js"></script>
+    <link href="/static/css/distance.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+<body>
+    <header class="header_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="logo_area text-center">
+                        <a href="/article/artlist" class="yummy-logo">论坛分享</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
+                            <ul class="navbar-nav" id="yummy-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/article/artlist">论坛首页<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a  class="nav-link" id="orderby" onclick="history.back()">返回上页</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/article/artlist" onclick="logout()">注销</a>
+                                </li>
+                           </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+     <div class="hero-wrap" style="background-image: url('/static/images/luntan.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+          <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center fadeInUp ftco-animated">
+          </div>
+        </div>
+      </div>
+    </div>
+    </header>
+
+
+
+
+<form method="post" enctype="multipart/form-data">
+<div class="col-md-6"style="margin-left:600px;padding-top:30px;">
+    <label for="title">文章标题</label>
+    <!-- 文本框 -->
+    <input type="text" placeholder="请输入标题..." id="title" name="title" value="{{ article.title }}">
+    <div>
+        <label for="body">文章正文</label>
+        <br>
+        <!-- 文本区域 -->
+        <textarea type="text" placeholder="请输入内容..." style="width:700px" id="body" name="body" rows="12">{{ article.body }}</textarea>
+    </div>
+    <div>
+        <label>选择图片:</label>
+        <div>
+            <input type="file" id="picfile" name="picfile">
+        </div>
+        <div><img src="/media/{{ article.img }}"></div>
+    </div>
+    <div>
+        <button type="submit" style="margin-bottom:330px;margin-top:30px">提交</button>
+    </div>
+</div>
+</form>
+
+    <script>
+       function logout() {
+           window.localStorage.removeItem('dnblog_token');
+           window.localStorage.removeItem('dnblog_user');
+           alert('您已退出')
+       }
+    </script>
+</body>
+</html>

@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>行程分享</title>
+    <script src="/static/js/jquery-2.2.4.min.js"></script>
+    <link href="/static/css/distance.css" rel="stylesheet">
+    <link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+    <header class="header_area">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <div class="logo_area text-center">
+                        <a href="/article/artlist" class="yummy-logo">论坛分享</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="col-12">
+                    <nav class="navbar navbar-expand-lg">
+                        <div class="collapse navbar-collapse justify-content-center" id="yummyfood-nav">
+                            <ul class="navbar-nav" id="yummy-nav">
+                                <li class="nav-item active">
+                                    <a class="nav-link" href="/article/artlist">论坛首页<span class="sr-only">(current)</span></a>
+                                </li>
+                                <li class="nav-item">
+                                    <a  class="nav-link" id="orderby">最热</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" id="fa">发帖</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/user/login">登录</a>
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/article/artlist" onclick="logout()">注销</a>
+                                </li>
+   </ul>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </div>
+
+     <div class="hero-wrap" style="background-image: url('/static/images/luntan.jpg');">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row no-gutters slider-text d-flex align-itemd-end justify-content-center">
+          <div class="col-md-9 ftco-animate text-center d-flex align-items-end justify-content-center fadeInUp ftco-animated">
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+
+    </header>
+
+
+    <div class="col-12">
+        <div class="list-blog single-post d-sm-flex wow fadeInUpBig animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s;">
+            <!-- Post Thumb -->
+            <div class="post-thumb">
+                <img style="width:533px;height:313px" src="/static/images/bixin01.jpg" alt="">
+            </div>
+            <!-- Post Content -->
+            <div class="post-content">
+                <div class="post-meta d-flex">
+                    <div class="post-author-date-area d-flex">
+                        <!-- Post Author -->
+                        <div class="post-author">
+                            <a href="">路游</a>
+                        </div>
+                        <!-- Post Date -->
+                        <div class="post-date">
+                            <a href="">始创于2020.9.21</a>
+                        </div>
+                    </div>
+                </div>
+                <p>我们作为开发者愿积极为每一位用户创造方便,我们愿用心为您创造快乐,更多的功能正在研发中！！</p>
+                <p>我们作为开发者愿积极为每一位用户创造方便,我们愿用心为您创造快乐,更多的功能正在研发中！！</p>
+                <div>浏览量：99999</div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+<!--<button class="nav-link" id="fa">发帖</button>-->
+<!--<button onclick="history.back()">返回</button>-->
+{#最热 添加样式:鼠标移动到时变，字体颜色#}
+<!--<a id="orderby">最热</a>-->
+
+{#文本#}
+<div id="text">
+        <div class="col-12">
+            {% for b in page %}
+            <div class="list-blog single-post d-sm-flex wow fadeInUpBig animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s;">
+
+                <div class="post-thumb">
+                    <img style="width:533px;height:313px" src='/media/{{ b.img }}' alt="" onerror="this.src='/static/images/bixin01.jpg'">
+                </div>
+            <div class="post-content">
+                <div gclass="post-meta d-flex">
+                    <div class="post-author-date-area d-flex">
+<!--                        <div class="post-author">-->
+<!--                            <a href=""></a>-->
+<!--                        </div>-->
+                    </div>
+                    <div class="post-comment-share-area d-flex"><!-- Post Share -->
+                        <div class="post-share">
+                            <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="">
+                    <h4 class="post-headline">{{ b.title }}</h4>
+                </a>
+                <p><div class="content" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width:120px" >{{ b.body }}</div></p>
+                        <div>浏览量：{{ b.total_views }}
+                        </div>
+
+                <a class="read-more" onclick="read({{ b.id }})">Continue Reading..</a>
+            </div>
+            </div>
+                {% endfor %}
+            </div>
+        </div>
+
+{#page#}
+<div class="pagination">
+    {% if page.has_previous %}
+        <a href="/article/artlist?page={{ page.previous_page_number }}"> &laquo;</a>
+    {% else %}
+        &raquo;
+    {% endif %}
+
+    {% for p in paginator.page_range %}
+        {% if p == page.number %}
+            {{ p }}
+        {% else %}
+            <a href="/article/artlist?page={{ p }}">&nbsp&nbsp&nbsp&nbsp{{ p }}&nbsp</a>
+        {% endif %}
+    {% endfor %}
+
+    {% if page.has_next %}
+        <a href="/article/artlist?page={{ page.next_page_number }}">&nbsp&raquo;&nbsp</a>
+    {% else %}
+        &nbsp&laquo;&nbsp
+    {% endif %}
+</div>
+
+<script>
+    $('#fa').click(function () {
+        var token = window.localStorage.getItem('dnblog_token');
+        var username = window.localStorage.getItem('dnblog_user');
+        $.ajax({
+            url: "/article/log_dec",
+            type: 'GET',
+            beforeSend: function (request) {
+                request.setRequestHeader("Authorization", token);
+            },
+            success: function (res) {
+                if (res.code == 200) {
+                    window.location.href = '/article/create/'+username
+                } else {
+                    var r = confirm("未登录");
+                    if (r == true) {
+                        window.location.href = '/user/login'
+                    }
+                }
+            }
+        })
+    })
+</script>
+
+
+<script>
+    function read(id) {
+        window.location.href = '/article/article_detail/' + id
+    }
+
+    $('#orderby').click(function () {
+        $.ajax({
+            url: "/article/total_views",
+            type: 'GET',
+            success: function (res) {
+                $('#text').html('');
+                $.each(res, function (i, obj) {
+                    html = `
+            <div class="list-blog single-post d-sm-flex wow fadeInUpBig animated" data-wow-delay=".2s" style="visibility: visible; animation-delay: 0.2s;">
+                <div class="post-thumb">
+                    <img style="width:533px;height:313px" src='/media/${obj.img}' alt="" onerror="this.src='/static/images/bixin01.jpg'">
+                </div>
+            <div class="post-content">
+                <div gclass="post-meta d-flex">
+                    <div class="post-author-date-area d-flex">
+                    </div>
+                    <div class="post-comment-share-area d-flex"><!-- Post Share -->
+                        <div class="post-share">
+                            <a href="#"><i class="fa fa-share-alt" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <a href="">
+                    <h4 class="post-headline">${obj.title}</h4>
+                </a>
+                <p><div class="content" style="overflow: hidden;text-overflow:ellipsis;white-space: nowrap;width:120px" >${obj.body}</div></p>
+                        <div>浏览量：${obj.total_views}
+                        </div>
+
+                <a class="read-more" onclick="read(${obj.id})">Continue Reading..</a>
+            </div>
+            </div>`;
+                    $('#text').append(html)
+                })
+            }
+        })
+    })
+</script>
+
+    <script>
+       function logout() {
+           window.localStorage.removeItem('dnblog_token');
+           window.localStorage.removeItem('dnblog_user');
+           alert('您已退出')
+       }
+    </script>
+
+
+</body>
+</html>

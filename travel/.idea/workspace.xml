@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="16b70f5b-d3b0-45a0-b9ca-6960ced0a260" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../1600768844172.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../travel.zip" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/travel.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/APPID.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/form.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/templates/article/create.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/templates/article/detail.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/templates/article/list.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/templates/article/update.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/article/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/change/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/templates/customized/payok.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/templates/customized/search_view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/templates/customized/view.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/customized/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/templates/hotel/hotel.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hotel/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/manage.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/2020-09-22_09-05-06_的屏幕截图.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/2020-09-22_09-05-23_的屏幕截图.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/56.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/59.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/94266218f5c7f79c57e949444b2737a5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/b778bf943b6cfdd583cf580816a7989.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/bixin02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/x.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/x_3fkz3Ud.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/x_7e8zmdg.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/y.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/y_0kHUPDz.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/y_465S4rb.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/y_LDFeRMi.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/y_jLKpaZL.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/arttu/y_zaGiKEm.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/avatar/123456.jfif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/avatar/52febb6007de2289a2b17d2f30f20a4b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/media/avatar/cf41e9cdf235b0489ca5e59bbf84a447.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/message/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/payment/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap-theme.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/bootstrap/js/bootstrap.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/animate.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/bootstrap.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/comments.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/customized.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/distance.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/login_reglogin.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/owl.carousel.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/owl.carousellc.min.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/owl.carouseltq.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/css/styletq.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/3.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/4.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/5.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/55.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/56.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/59.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/60.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/a.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/a.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about_us.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/about_we.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/arrow_up.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/b.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/banner04.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/bg_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/bg_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/bixin.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/bixin01.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/bixin02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/bixin03.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/c.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/fatie.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/fatie2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/image_1.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/image_2.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/image_5.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/image_6.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/image_8.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/luntan.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/toppic02.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/images/z.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jingdianfile/insert views_data_to_sql.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jingdianfile/summary1__OK.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jingdianfile/summary2__OK.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jingdianfile/summary3__OK.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/jingdianfile/summary4__OK.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/active.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/aos.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/auto.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/bootstrap-datepicker.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-1.9.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-2.2.4.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery-migrate-3.0.1.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery.magnific-popup.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery.stellar.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquery.waypoints.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/jquerytq.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/main.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/owl.carousel.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/plugins.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/scrollax.min.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/wangEditor.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/xcConfirm.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/js/zhifubao.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/key_file/alipay_public_key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/key_file/app_private_key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/key_file/app_public_key.pem" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/mobile/layer.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/mobile/need/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/theme/default/icon-ext.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/theme/default/icon.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/theme/default/layer.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/theme/default/loading-0.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/theme/default/loading-1.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/layer/theme/default/loading-2.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/popper/popper.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/tq_city/city.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/tq_city/citys.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/change_info.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/templates/index2.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/get_address.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/get_weather.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/logging_dec.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/random_word.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/sms.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/token.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tools/view_cache.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/templates/location/get_location.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tq/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/travel/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/travel/settings.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/travel/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/travel/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/travel/wsgi.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/admin.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/apps.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/0001_initial.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/migrations/__init__.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/models.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user/login.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/templates/user/register.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/tests.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/urls.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/user/views.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../路游使用说明文档.docx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../项目介绍总.pptx" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
+  </component>
+  <component name="DjangoConsoleOptions" custom-start-script="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)">
+    <option name="myCustomStartScript" value="import sys; print('Python %s on %s' % (sys.version, sys.platform))&#10;import django; print('Django %s' % django.get_version())&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;if 'setup' in dir(django): django.setup()&#10;import django_manage_shell; django_manage_shell.run(PROJECT_ROOT)" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="JavaScript File" />
+        <option value="Python Script" />
+        <option value="HTML File" />
+      </list>
+    </option>
+  </component>
+  <component name="InvalidFacetManager">
+    <ignored-facets>
+      <facet id="travel/invalid/Django" />
+    </ignored-facets>
+  </component>
+  <component name="ProjectId" id="1gdSi8eNRUoTz3TA1D4Lnuraxif" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="DefaultHtmlFileTemplate" value="HTML File" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/media" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/user/templates/user" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/static" />
+      <recent name="$PROJECT_DIR$/user/templates/user" />
+      <recent name="$PROJECT_DIR$/static/js" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.01">
+    <configuration name="hotel.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/travelall_2/hotel/templates/hotel/hotel.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="index.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/travelall_2/templates/index.html" useBuiltInWebServerPort="true">
+      <method v="2" />
+    </configuration>
+    <configuration name="01" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="travel" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../城市转化代码" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/../城市转化代码/01.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="insert views_data_to_sql" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="travel" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/static/jingdianfile" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/static/jingdianfile/insert views_data_to_sql.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="manage" type="PythonConfigurationType" factoryName="Python" temporary="true">
+      <module name="travel" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/manage.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="travel" type="Python.DjangoServer" factoryName="Django server">
+      <module name="travel" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="launchJavascriptDebuger" value="false" />
+      <option name="port" value="8000" />
+      <option name="host" value="" />
+      <option name="additionalOptions" value="" />
+      <option name="browserUrl" value="" />
+      <option name="runTestServer" value="false" />
+      <option name="runNoReload" value="false" />
+      <option name="useCustomRunCommand" value="false" />
+      <option name="customRunCommand" value="" />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python.insert views_data_to_sql" />
+        <item itemvalue="Python.manage" />
+        <item itemvalue="Python.01" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="viewStates">
+      <list>
+        <serviceView>
+          <treeState>
+            <expand />
+            <select />
+          </treeState>
+        </serviceView>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="16b70f5b-d3b0-45a0-b9ca-6960ced0a260" name="Default Changelist" comment="" />
+      <created>1598443100916</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1598443100916</updated>
+      <workItem from="1598443103550" duration="4742000" />
+      <workItem from="1598487986678" duration="4912000" />
+      <workItem from="1598493717566" duration="1051000" />
+      <workItem from="1598495109280" duration="4545000" />
+      <workItem from="1598499860037" duration="1782000" />
+      <workItem from="1598512996652" duration="12180000" />
+      <workItem from="1598530591734" duration="205000" />
+      <workItem from="1598575175828" duration="169000" />
+      <workItem from="1598953628359" duration="3930000" />
+      <workItem from="1598957673582" duration="7307000" />
+      <workItem from="1599007158448" duration="1826000" />
+      <workItem from="1599482920545" duration="287000" />
+      <workItem from="1599566360501" duration="4507000" />
+      <workItem from="1599610816686" duration="2633000" />
+      <workItem from="1599650561066" duration="2614000" />
+      <workItem from="1599653492008" duration="86000" />
+      <workItem from="1600316556904" duration="852000" />
+      <workItem from="1600317729780" duration="320000" />
+      <workItem from="1600324845483" duration="9609000" />
+      <workItem from="1600336649180" duration="281000" />
+      <workItem from="1600337093628" duration="2725000" />
+      <workItem from="1600340670043" duration="7756000" />
+      <workItem from="1600395214039" duration="2769000" />
+      <workItem from="1600406874061" duration="264000" />
+      <workItem from="1600407637984" duration="5929000" />
+      <workItem from="1600428818605" duration="1042000" />
+      <workItem from="1600480288462" duration="24590000" />
+      <workItem from="1600772641455" duration="1026000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="616" y="214" key="FileChooserDialogImpl" timestamp="1604845908639">
+      <screen x="67" y="27" width="1567" height="861" />
+    </state>
+    <state x="616" y="214" key="FileChooserDialogImpl/67.27.1567.861@67.27.1567.861" timestamp="1604845908639" />
+    <state x="716" y="214" key="FileChooserDialogImpl/67.27.1851.861@67.27.1851.861" timestamp="1598455178352" />
+    <state x="369" y="91" key="SettingsEditor" timestamp="1604841046947">
+      <screen x="67" y="27" width="1567" height="861" />
+    </state>
+    <state x="369" y="91" key="SettingsEditor/67.27.1567.861@67.27.1567.861" timestamp="1604841046947" />
+  </component>
+</project>

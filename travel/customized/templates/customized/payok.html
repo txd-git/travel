@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>订单核对</title>
+    <style>
+        body{
+            position: relative;
+
+        }
+        #order{
+            position: absolute;
+            text-align: center;
+            top: 90px;
+            left: 400px;
+        }
+        #order td{
+            width: 100px;
+        }
+        #check{
+            position: absolute;
+            left: 400px;
+        }
+    </style>
+</head>
+
+<body>
+
+<table id="order">
+    <tr id="check">支付订单详情确认</tr>
+    <tr>
+        <td>订单编号</td>
+        <td>支付金额</td>
+        <td>出行日期</td>
+        <td>是否已消费</td>
+    </tr>
+    <tr>
+        <td>{{ order_id }}</td>
+        <td>{{ price }}</td>
+        <td>{{ spend_time }}</td>
+        <td>否</td>
+    </tr>
+</table>
+</body>
+</html>
